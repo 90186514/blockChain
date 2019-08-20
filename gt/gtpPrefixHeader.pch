@@ -1,0 +1,98 @@
+
+//
+//  Created by Aalto on 2018/11/18.
+//  Copyright © 2018 Aalto. All rights reserved.
+//
+
+#ifndef gtpPrefixHeader_pch
+#define gtpPrefixHeader_pch
+//三方库
+#import "RegexKitLite.h"
+#import "SGQRCode.h"//二维码生成、扫描及页面跳转
+#import "UICountingLabel.h"//数字可以一直变化到指定值的UILable
+
+#pragma mark —— 富文本编辑
+///WPAttributedMarkup能给Label中某关键字添加文字效果或点击事件。Label中的某个关键字词可以改变字体的特性如颜色、加粗,下划线等,也可以为某个关键字词添加点击事件
+#import "NSString+WPAttributedMarkup.h"
+#import "WPAttributedStyleAction.h"
+#import "WPHotspotLabel.h"
+
+#import "MJExtension.h"
+#import <Masonry/Masonry.h>
+#import "PureLayout.h"
+
+#import "YTSharednetManager.h"
+
+#import <MJRefresh/MJRefresh.h>
+
+#import "DTCoreText.h"
+
+#import "UIImageView+WebCache.h"
+#import "MWPhotoBrowser.h"
+
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
+#import <JPush/JPUSHService.h>
+
+#import <EAIntroView/EAIntroView.h>
+
+#import <IQKeyboardManager/IQKeyboardManager.h>
+
+//// 引入 JPush 功能所需头文件
+//#import "JPUSHService.h"
+//// iOS10 注册 APNs 所需头文件
+//#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+//#import <UserNotifications/UserNotifications.h>
+//#endif
+//#import "VicJPushManager.h"
+
+//#import <RongIMKit/RongIMKit.h>
+//#import "RongCloudManager.h"
+
+//GeneralModules
+#import "YBGeneralColor.h"
+#import "YBGeneralFont.h"
+#import "YBNotificationManager.h"
+
+#import "UIView+Extras.h"
+#import "UIScrollView+YBGeneral.h"
+#import "UITableView+YBGeneral.h"
+#import "UICollectionView+YBGeneral.h"
+#import "UIViewController+YBGeneral.h"
+#import "BaseVC.h"
+#import "YBNaviagtionViewController.h"
+//ToolModules
+#import "ToolMacro.h"
+#import "YBSystemTool.h"
+#import "YBFrameTool.h"
+#import "YKToastView.h"
+#import "AABlock.h"
+#import "AppDelegate.h"
+
+//Category
+#import "UIImage+Extras.h"
+#import "UIImageView+Extras.h"
+#import "UITextView+ZWLimitCounter.h"
+#import "UITextView+ZWPlaceHolder.h"
+#import "UIButton+Extras.h"
+#import "UINavigationItem+Extras.h"
+#import "CALayer+Extras.h"
+
+#import "NSData+Extras.h"
+#import "NSObject+Extras.h"
+#import "NSDictionary+VicExt.h"
+#import "NSDictionary+Extras.h"
+#import "NSString+Extras.h"
+
+//api
+#import "ApiConfig.h"
+
+#import <RongIMKit/RongIMKit.h>
+#import "RongCloudManager.h"
+#import "RCDCustomerServiceViewController.h"
+
+
+#endif /* gtpPrefixHeader_pch */
+
+
