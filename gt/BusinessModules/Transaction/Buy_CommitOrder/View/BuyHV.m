@@ -240,7 +240,7 @@
         make.top.mas_equalTo(self.safeLab.mas_bottom).offset(10);
         make.height.mas_equalTo(147.5);
     }];
-    
+    //UIRectCornerTopRight 需layoutSubviews中进行，但是记得super
     [self layoutIfNeeded];
 
 //    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.moneyView0.bounds byRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(8, 8)];
