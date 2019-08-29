@@ -287,7 +287,20 @@ static YTSharednetManager *sharedManager = nil;
                             allowLossyConversion:YES];
     //nickname 中文出现过问题
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    
+    /*图形验证码的数据流用这个
+     httpSessionManager.responseSerializer = [AFHTTPRequestSerializer serializer];
+     用完设置回
+     httpSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/octet-stream",@"text/html",@"text/json",@"application/json",@"text/javascript",@"image/jpeg",@"image/png",@"text/plain",@"image/gif", nil];
+
+     */
+    /*有textFiled的cell不复用的设置
+     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+     if (cell == nil) {
+     
+     cell = [[UITableViewCell alloc]initWithStyle:0 reuseIdentifier:CellIdentifier];
+     */
     NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST"
                                                                                  URLString:[NSString stringWithFormat:@"%@%@",path,urlPath_Header]
                                                                                 parameters:nil
