@@ -383,6 +383,47 @@
     return subAttributedStr;
 }
 
++ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string
+   stringColor:(UIColor*)scolor
+stringFont:(UIFont*)sFont
+   numInPreStringColor:(UIColor*)numInPreStringColor
+   numInPreStringFont:(UIFont*)numInPreStringFont
+
+   subString:(NSString *)subString
+   subStringColor:(UIColor*)subStringcolor
+   subStringFont:(UIFont*)subStringFont
+   numInSubColor:(UIColor*)numInSubColor
+   numInSubFont:(UIFont*)numInSubFont
+{
+    
+    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"([0-9]\\d*\\.?\\d*)" options:0 error:NULL];//)个
+    
+    NSArray<NSTextCheckingResult *> *sRanges = [regular matchesInString:string options:0 range:NSMakeRange(0, [string length])];
+    
+    NSMutableAttributedString *attributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string]];
+    NSDictionary * attributes = @{ NSFontAttributeName:sFont,NSForegroundColorAttributeName:scolor};
+    [attributedStr setAttributes:attributes range:NSMakeRange(0,attributedStr.length)];
+    for (int i = 0; i < sRanges.count; i++) {
+        [attributedStr setAttributes:@{NSForegroundColorAttributeName : numInPreStringColor,NSFontAttributeName:numInPreStringFont} range:sRanges[i].range];
+    }
+    
+    
+    NSArray<NSTextCheckingResult *> *ranges = [regular matchesInString:subString options:0 range:NSMakeRange(0, [subString length])];
+    
+    NSDictionary * subAttributes = @{NSFontAttributeName:subStringFont,NSForegroundColorAttributeName:subStringcolor};
+    
+    NSMutableAttributedString *subAttributedStr = [[NSMutableAttributedString alloc] initWithString:subString attributes:subAttributes];
+    
+    for (int i = 0; i < ranges.count; i++) {
+        [subAttributedStr setAttributes:@{NSForegroundColorAttributeName : numInSubColor,NSFontAttributeName:numInSubFont} range:ranges[i].range];
+    }
+    
+    [attributedStr appendAttributedString:subAttributedStr];
+    
+    return attributedStr;
+}
+
+
 + (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont numInSubColor:(UIColor*)numInSubColor numInSubFont:(UIFont*)numInSubFont
 {
     NSMutableAttributedString *attributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string]];

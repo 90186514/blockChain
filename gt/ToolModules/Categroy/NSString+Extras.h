@@ -48,6 +48,19 @@ typedef NS_ENUM(NSUInteger,InputCharType){
 + (NSString *)timeWithSecond:(NSInteger)second;
 - (NSString *)subStringFrom:(NSString *)startString to:(NSString *)endString;
 + (NSMutableAttributedString *)attributedReverseStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont numInSubColor:(UIColor*)numInSubColor numInSubFont:(UIFont*)numInSubFont;
+
++ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string
+                                              stringColor:(UIColor*)scolor
+                                      stringFont:(UIFont*)sFont
+                                      numInPreStringColor:(UIColor*)numInPreStringColor
+                                       numInPreStringFont:(UIFont*)numInPreStringFont
+
+                                                subString:(NSString *)subString
+                                           subStringColor:(UIColor*)subStringcolor
+                                            subStringFont:(UIFont*)subStringFont
+                                            numInSubColor:(UIColor*)numInSubColor
+                                             numInSubFont:(UIFont*)numInSubFont;
+
 + (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont numInSubColor:(UIColor*)numInSubColor numInSubFont:(UIFont*)numInSubFont;
 
 + (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont;

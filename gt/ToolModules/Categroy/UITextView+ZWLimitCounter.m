@@ -124,4 +124,41 @@ static char labHeightKey;
     }
     return label;
 }
+//调节TextField左右间距
+//self.levelTextField = [[UITextField alloc] init];
+//self.levelTextField.text = @"全部";
+//self.levelTextField.textColor = HEXCOLOR(0x999999);
+//self.levelTextField.font = [UIFont systemFontOfSize2:15];
+//self.levelTextField.backgroundColor = HEXCOLOR(0xeeeeee);
+//self.levelTextField.layer.masksToBounds = YES;
+//self.levelTextField.layer.cornerRadius = 18;
+//
+//UIView *tfRightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 26, 18)];
+//
+//UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+//imageView.image=[UIImage imageNamed:@"playerSearchTypeIcon"];
+//imageView.contentMode = UIViewContentModeLeft;
+//
+//[tfRightView addSubview:imageView];
+//
+//self.levelTextField.rightView = tfRightView;
+//
+//self.levelTextField.rightViewMode = UITextFieldViewModeAlways;
+//
+//self.levelTextField.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 8, 0)];
+//self.levelTextField.leftViewMode = UITextFieldViewModeAlways;
+//
+//[iv addSubview:self.levelTextField];;
+//[self.levelTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+//    make.right.equalTo(btn.mas_left).offset(-10); make.top.height.equalTo(btn);
+//    make.width.equalTo(@105);
+//}];
+//
+//
+//UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//[iv addSubview:btn1];
+//[btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+//    make.edges.equalTo(self.levelTextField);
+//}];
+//[btn1 addTarget:self action:@selector(showTypes) forControlEvents:UIControlEventTouchUpInside];
 @end
