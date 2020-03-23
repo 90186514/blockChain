@@ -9,7 +9,7 @@
 #import "LeePhotoOrAlbumImagePicker.h"
 
 #import <AssetsLibrary/AssetsLibrary.h>
-#import <Photos/PhotosDefines.h>
+#import <Photos/Photos.h>
 #import <Photos/PHPhotoLibrary.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>

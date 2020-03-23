@@ -61,7 +61,14 @@ extern NSString* const kData;
 extern NSString* const kHomeCoinListDataKey;
 extern NSString* const kHomeBannerDataKey;
 
-
+typedef NS_ENUM(NSUInteger,IndexSectionType){
+    IndexSectionZero = 0 ,
+    IndexSectionOne ,
+    IndexSectionTwo ,
+    IndexSectionThree ,
+    IndexSectionFour ,
+    IndexSectionFive ,
+};
 typedef NS_ENUM(NSUInteger,EnumActionTag){
     EnumActionTag0 = 0 ,
     EnumActionTag1  ,

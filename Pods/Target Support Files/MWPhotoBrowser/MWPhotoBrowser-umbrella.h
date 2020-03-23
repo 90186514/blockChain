@@ -21,6 +21,7 @@
 #import "MWTapDetectingImageView.h"
 #import "MWTapDetectingView.h"
 #import "MWZoomingScrollView.h"
+#import "UIImage+MWPhotoBrowser.h"
 
 FOUNDATION_EXPORT double MWPhotoBrowserVersionNumber;
 FOUNDATION_EXPORT const unsigned char MWPhotoBrowserVersionString[];

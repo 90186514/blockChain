@@ -196,12 +196,12 @@
     if (_lineView.data.dataSetCount > 0) {
         LineChartData *data = (LineChartData *)_lineView.data;
         set1 = (LineChartDataSet *)data.dataSets[0];
-        set1.values = yVals;
+//        set1.values = yVals;
         set1.valueFormatter = [[SetValueFormatter alloc]initWithArr:yVals];
         return data;//com.iossinger.FaceSDKDemo
     }else{
         //创建LineChartDataSet对象
-        set1 = [[LineChartDataSet alloc]initWithValues:yVals label:nil];
+        set1 = [[LineChartDataSet alloc]initWithEntries:yVals label:nil];
         //设置折线的样式
         set1.lineWidth = 2.0/[UIScreen mainScreen].scale;//折线宽度
         

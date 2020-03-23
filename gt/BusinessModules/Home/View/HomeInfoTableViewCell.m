@@ -39,7 +39,7 @@
     self.homeTypeLab.text = listModel.coinId;
     
 //    self.homeTypeImage.image = [UIImage imageNamed:listModel.coinId];
-    [self.homeTypeImage setImageWithURL:[NSURL URLWithString:listModel.coinImageUrl] placeholderImage:kIMG(@"icon-in-app")];
+    [self.homeTypeImage sd_setImageWithURL:[NSURL URLWithString:listModel.coinImageUrl] placeholderImage:kIMG(@"icon-in-app")];
     
     if ([listModel.upAndDown floatValue] > 0) {
         self.homeUpDownLab.text = [NSString stringWithFormat:@"+%@",listModel.upAndDown];

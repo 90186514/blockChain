@@ -695,7 +695,7 @@
 
 - (void)openWYVertifyCodeView{
     
-    self.manager =  [NTESVerifyCodeManager sharedInstance];
+    self.manager =  [[NTESVerifyCodeManager alloc]init];
     
     [self.view endEditing:YES];
     

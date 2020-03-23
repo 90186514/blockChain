@@ -43,7 +43,6 @@
 #import "UIImage+DTFoundation.h"
 #import "UIScreen+DTFoundation.h"
 #import "UIView+DTFoundation.h"
-#import "UIWebView+DTFoundation.h"
 
 FOUNDATION_EXPORT double DTFoundationVersionNumber;
 FOUNDATION_EXPORT const unsigned char DTFoundationVersionString[];

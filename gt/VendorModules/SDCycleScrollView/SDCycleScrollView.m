@@ -485,7 +485,7 @@ NSString * const ID = @"cycleCell";
     
     if ([imagePath isKindOfClass:[NSString class]]) {
         if ([imagePath hasPrefix:@"http"]||[imagePath hasPrefix:@"//"]) {
-            [cell.imageView setImageWithURL:[NSURL URLWithString:imagePath] placeholderImage:self.placeholderImage];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:imagePath] placeholderImage:self.placeholderImage];
         } else {
             cell.imageView.image = [UIImage imageNamed:imagePath];
         }

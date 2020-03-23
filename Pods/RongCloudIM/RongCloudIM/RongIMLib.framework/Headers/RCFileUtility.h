@@ -52,5 +52,10 @@
 
 + (NSString *)getUniqueFileName:(NSString *)baseFileName;
 
++ (NSString *)getTypeName:(NSString *)fileName;
+
++ (NSString *)getFileLocalPath:(NSString *)fileUri;
+
++ (void)setFileLocalPath:(NSString *)localPath fileUri:(NSString *)fileUri;
 @end
 #endif
