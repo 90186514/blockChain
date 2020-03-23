@@ -458,8 +458,8 @@
     UITextField* tf = [[UITextField alloc] init];
     tf.delegate = self;
     tf.placeholder = @"输入自定义金额";
-    [tf setValue:HEXCOLOR(0x4c7fff) forKeyPath:@"_placeholderLabel.textColor"];
-    [tf setValue:[UIFont systemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+    [tf setValue:HEXCOLOR(0x4c7fff) forKeyPath:@"placeholderLabel.textColor"];
+    [tf setValue:[UIFont systemFontOfSize:13] forKeyPath:@"placeholderLabel.font"];
     tf.font = kFontSize(13);
     tf.keyboardType = UIKeyboardTypeNumberPad;
     tf.textAlignment = NSTextAlignmentCenter;
