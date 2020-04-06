@@ -11,7 +11,7 @@
 @property (nonatomic, copy) ActionBlock block;
 @end
 @implementation GridCell
-
+//如果是GridView的话，改成initWithFrame
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])
@@ -50,9 +50,7 @@
     return self;
 }
 
-+(CGFloat)cellHeightWithModel{
-    return kGridCellHeight;
-}
+
 +(instancetype)cellWith:(UITableView*)tabelView{
     GridCell *cell = (GridCell *)[tabelView dequeueReusableCellWithIdentifier:@"GridCell"];
     if (!cell) {
@@ -60,8 +58,17 @@
     }
     return cell;
 }
+
++(CGFloat)cellHeightWithModel:(NSArray*)model{
+    //更新GridCell高度
+    return (model.count%4==0?model.count/4:model.count/4+1)*kGridCellHeight;
+}
 - (void)richElementsInCellWithModel:(NSArray*)model{
     _data = model;
+    
+    //如果是GridCell的话，要同步collectionView高度
+    [_collectionView setHeight:[GridCell cellHeightWithModel:model]];
+    
     [_collectionView setDelegate:self];
     [_collectionView setDataSource:self];
     
@@ -89,25 +96,33 @@
     static NSString *gCollectionViewCell = @"gCollectionViewCell";
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:gCollectionViewCell forIndexPath:indexPath];
     
-    ////计算图标的中心位置
-    float unitCenterWith = collectionView.width  / 3;
-    float iconWidth = 44;
-    float iconStartPoint = (unitCenterWith - iconWidth) / 2;
-    
     if (cell) {
-        UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(iconStartPoint, 15, iconWidth, iconWidth)];
+        UIImageView *icon = [[UIImageView alloc]init];
         icon.tag = 7001;
-        [icon setBackgroundColor:kClearColor];
         [cell.contentView addSubview:icon];
+        [icon setBackgroundColor:kClearColor];
+        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(15);
+            make.centerX.mas_equalTo(cell.contentView);
+            make.width.height.mas_equalTo(44);
+        }];
+
         
         
-        UILabel *title = [[UILabel alloc]initWithFrame :CGRectMake(0, icon.height + icon.origin.y +10, unitCenterWith, 13)];
+        UILabel *title = [[UILabel alloc]init];
         title.tag = 7003;
+        [cell.contentView addSubview:title];
+        [title mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(icon.mas_bottom).offset(5);
+            make.centerX.mas_equalTo(cell.contentView);
+            make.left.mas_equalTo(3);
+            make.bottom.mas_equalTo(cell.contentView);
+        }];
         [title setBackgroundColor:kClearColor];
         [title setTextAlignment:NSTextAlignmentCenter];
         [title setFont:kFontSize(13)];
         [title setTextColor:HEXCOLOR(0x202020)];
-        [cell.contentView addSubview:title];
+        title.numberOfLines = 0;
     }
     
     NSDictionary *fourPalaceData = [_data objectAtIndex:indexPath.row];
@@ -150,7 +165,7 @@
 //定义每个UICollectionView 的大小
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(collectionView.width / 3, kGridCellHeight/2);
+    return CGSizeMake(collectionView.width / 4, kGridCellHeight);
 }
 @end
 
